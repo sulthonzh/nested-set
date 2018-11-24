@@ -1,0 +1,7 @@
+db:
+  adapter: "mysql" # this is can be set to other db adapter like mysql/postgres etc 
+  host: "[DB_HOST]"
+  port: 3306
+  name: "[DB_NAME]"
+  user: "[DB_USER]"
+  password: "[DB_PASSWORD]"
