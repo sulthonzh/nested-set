@@ -47,7 +47,7 @@ func main() {
 	}{}
 
 	treeNodes := nodes.GenerateTree(child)
-	b, _ := json.Marshal(treeNodes)
+	b, _ := treeNodes.Marshal()
 	fmt.Println(string(b))
 
 	err = json.Unmarshal(b, &nodes)
