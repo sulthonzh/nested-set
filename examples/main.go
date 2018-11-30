@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	nestedset "gitlab.com/sulthonzh/scraperpath-nested-set"
-	"gitlab.com/sulthonzh/scraperpath-nested-set/examples/db"
-	"gitlab.com/sulthonzh/scraperpath-nested-set/examples/utils"
+	nestedset "github.com/sulthonzh/nested-set"
+	"github.com/sulthonzh/nested-set/examples/db"
+	"github.com/sulthonzh/nested-set/examples/utils"
 )
 
 func main() {

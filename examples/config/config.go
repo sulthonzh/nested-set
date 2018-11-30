@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/spf13/viper"
-	"gitlab.com/sulthonzh/scraperpath-nested-set/examples/utils"
+	"github.com/sulthonzh/nested-set/examples/utils"
 )
 
 // Configuration ::

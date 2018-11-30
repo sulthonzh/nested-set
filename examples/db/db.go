@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"gitlab.com/sulthonzh/scraperpath-nested-set/examples/config"
+	"github.com/sulthonzh/nested-set/examples/config"
 
 	"github.com/jinzhu/gorm"
 	// spesial import ::
