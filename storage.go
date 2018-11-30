@@ -63,12 +63,12 @@ func (n NodeStorage) GetAllNodes(parent *Node) (nodes NodeCollection, err error)
 	var results NodeCollection
 	sql := fmt.Sprintf(`SELECT node.*,(COUNT(parent.name) - (sub_tree.depth + 1))  AS depth
 						FROM %s AS node,
-								%s AS parent,
-								%s AS sub_parent,
+								%[1]s AS parent,
+								%[1]s AS sub_parent,
 								(
 										SELECT node.name, (COUNT(parent.name) - 1) AS depth
-										FROM %s AS node,
-										%s AS parent
+										FROM %[1]s AS node,
+										%[1]s AS parent
 										WHERE node.lft BETWEEN parent.lft AND parent.rgt
 												AND node.type = ? AND node.name = ?
 										GROUP BY node.name
@@ -79,7 +79,7 @@ func (n NodeStorage) GetAllNodes(parent *Node) (nodes NodeCollection, err error)
 								AND sub_parent.name = sub_tree.name
 						GROUP BY node.name
 						ORDER BY node.lft;
-`, n.node.TableName(), n.node.TableName(), n.node.TableName(), n.node.TableName(), n.node.TableName())
+`, n.node.TableName())
 	rows, err := n.db.Raw(sql, parent.Type, parent.Name).Rows()
 	if err != nil {
 		return
